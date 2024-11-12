@@ -1,7 +1,7 @@
 yaml
 
-name: "Bug Report"
-description: "File a bug report"
+name: Release Record
+description: 'Track and manage the release process for various applications.'
 labels:
   - release
   - approval
@@ -19,8 +19,10 @@ body:
       **Release Description:**  
       _Provide a description of what this release includes, such as new features, bug fixes, etc._
 
-  - type: checkbox
+  - type: checklist
     label: Pre-release Steps
+    description: 'Please confirm all pre-release steps have been completed.'
+    required: true
     options:
       - 'Certify-release build (Check branches being released and perform necessary scans with SonarQube, Nexus, Checkmarx)'
       - 'QA Signoff'
@@ -68,5 +70,3 @@ body:
       - Monitor system health
       - Validate new features
       - Confirm rollback procedures
-
-
