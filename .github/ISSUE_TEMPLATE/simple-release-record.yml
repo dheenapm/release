@@ -1,7 +1,7 @@
 yaml
 
 name: Simple Release Record
-description: 'Basic template for tracking release activities.'
+description: Basic template for tracking release activities
 labels:
   - release
   - simple
@@ -11,17 +11,18 @@ body:
       ### Release Details
       _Please provide the details for the release below._
       
-      **Application Name**:  
+      **Application Name:**  
       _Enter the name of the application._
       
-      **Release Version**:  
+      **Release Version:**  
       _Enter the release version (e.g., v1.0.0)._
 
   - type: checklist
     label: Pre-release Steps
-    description: 'Confirm the pre-release steps have been completed.'
+    description: Confirm the pre-release steps have been completed
     required: true
     options:
       - 'Build successfully created'
       - 'QA sign-off completed'
       - 'UAT sign-off completed'
+
