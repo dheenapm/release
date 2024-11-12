@@ -1,17 +1,22 @@
-## Application Release Record Template
-
-Please fill in the details for the release below:
+---
+name: Application Release Record
+about: Create a record for an application release
+title: 'Release Record for [Application Name] - [Version]'
+labels: ['release', 'management']
+assignees: ''
+---
 
 ### Application Name:
-- _Enter the application name here_
+- _Enter the name of the application here_
 
 ### Release Version:
-- _Enter the release version number here_
+- _Enter the version number here_
 
 ### Pre-release Steps:
 - [ ] Build successfully created
 - [ ] QA sign-off completed
 - [ ] UAT sign-off completed
+- [ ] SRE sign-off completed
 
 ### Approval:
 - **App Owner Approval**: _Enter app owner's name_
@@ -20,3 +25,4 @@ Please fill in the details for the release below:
 ### Post-release Validation:
 - [ ] Monitor for 24 hours
 - [ ] Validate production environment stability
+- [ ] Ensure no critical issues are found
