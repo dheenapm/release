@@ -3,8 +3,8 @@ yaml
 name: Release Record
 description: 'Track and manage the release process for various applications.'
 labels:
-  - 'release'
-  - 'approval'
+  - release
+  - approval
 body:
   - type: markdown
     value: |
@@ -68,4 +68,5 @@ body:
       - Monitor system health
       - Validate new features
       - Confirm rollback procedures
+
 
