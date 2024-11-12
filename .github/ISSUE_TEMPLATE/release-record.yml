@@ -1,8 +1,9 @@
 yaml
-
 name: Release Record
 description: 'Track and manage the release process for various applications.'
-labels: ['release', 'approval']
+labels:
+  - 'release'
+  - 'approval'
 body:
   - type: markdown
     value: |
