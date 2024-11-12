@@ -1,7 +1,7 @@
 yaml
 
-name: "Release Record"
-description: 'Track and manage the release process for various applications.'
+name: "Bug Report"
+description: "File a bug report"
 labels:
   - release
   - approval
