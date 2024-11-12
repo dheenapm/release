@@ -1,3 +1,16 @@
 yaml
-name: Test Template
-description: Just a simple test template
+name: Release Record Template
+description: Template for tracking release activities.
+labels:
+  - release
+body:
+  - type: markdown
+    value: |
+      ### Release Details
+      _Please fill out the details for this release below._
+      
+      **Application Name:**  
+      _Enter the name of the application._
+      
+      **Release Version:**  
+      _Enter the version number (e.g., v1.0.0)._
