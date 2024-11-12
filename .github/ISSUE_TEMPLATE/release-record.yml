@@ -1,4 +1,5 @@
 yaml
+
 name: Release Record
 description: 'Track and manage the release process for various applications.'
 labels:
