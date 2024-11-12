@@ -5,39 +5,60 @@ body:
   - name: Application Name
     description: 'The name of the application for which this release is being tracked.'
     required: true
-    type: string
+    type: text
+
   - name: Release Version
     description: 'The version of the release being tracked (e.g., v1.2.0).'
     required: true
-    type: string
+    type: text
+
   - name: Release Description
     description: 'A description of what this release contains.'
     required: true
-    type: string
+    type: textarea
+
   - name: Pre-release Sign-offs
     description: 'List of sign-offs needed for the release process.'
     required: true
-    type: string
+    type: text
+
   - name: Certify-Release Build
     description: 'Branch(es) to be released and certification steps (SonarQube, Nexus, Checkmarx).'
     required: true
-    type: string
+    type: text
+
   - name: QA Signoff
     description: 'Has QA signed off on the release? Assign a reviewer.'
     required: true
-    type: string
+    type: dropdown
+    options:
+      - 'QA Approved'
+      - 'QA Not Approved'
+
   - name: UAT Signoff
     description: 'Has UAT signed off on the release? Assign a reviewer.'
     required: true
-    type: string
+    type: dropdown
+    options:
+      - 'UAT Approved'
+      - 'UAT Not Approved'
+
   - name: SRE Signoff
     description: 'Has SRE signed off on the release? Assign a reviewer.'
     required: true
-    type: string
+    type: dropdown
+    options:
+      - 'SRE Approved'
+      - 'SRE Not Approved'
+
   - name: App Owner Approval
     description: 'Has the application owner approved the release? Assign a reviewer.'
     required: true
-    type: string
+    type: dropdown
+    options:
+      - 'App Owner Approved'
+      - 'App Owner Not Approved'
+
   - name: Post-release Validation
     description: 'Post-release validation steps.'
     required: false
