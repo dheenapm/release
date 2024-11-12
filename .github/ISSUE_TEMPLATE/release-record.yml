@@ -1,71 +1,26 @@
-yml
-name: Release Record
-description: 'Track and manage the release process for various applications.'
+yaml
+name: Simple Release Record
+description: 'Basic template for tracking release activities.'
 labels:
   - release
-  - approval
+  - simple
 body:
   - type: markdown
     value: |
-      ### Release Record Details
-      _Fill in the details below for the release process._  
-      **Application Name:**  
-      _Enter the name of the application for which this release is being tracked._
-
-      **Release Version:**  
-      _Enter the version of the release (e.g., v1.2.0)_
-
-      **Release Description:**  
-      _Provide a description of what this release includes, such as new features, bug fixes, etc._
+      ### Release Details
+      _Please provide the details for the release below._
+      
+      **Application Name**:  
+      _Enter the name of the application._
+      
+      **Release Version**:  
+      _Enter the release version (e.g., v1.0.0)._
 
   - type: checklist
     label: Pre-release Steps
-    description: 'Please confirm all pre-release steps have been completed.'
+    description: 'Confirm the pre-release steps have been completed.'
     required: true
     options:
-      - 'Certify-release build (Check branches being released and perform necessary scans with SonarQube, Nexus, Checkmarx)'
-      - 'QA Signoff'
-      - 'UAT Signoff'
-      - 'SRE Signoff'
-      - 'App Owner Approval'
-
-  - type: dropdown
-    label: QA Signoff
-    description: 'Has QA signed off on the release?'
-    options:
-      - 'QA Approved'
-      - 'QA Not Approved'
-    required: true
-
-  - type: dropdown
-    label: UAT Signoff
-    description: 'Has UAT signed off on the release?'
-    options:
-      - 'UAT Approved'
-      - 'UAT Not Approved'
-    required: true
-
-  - type: dropdown
-    label: SRE Signoff
-    description: 'Has SRE signed off on the release?'
-    options:
-      - 'SRE Approved'
-      - 'SRE Not Approved'
-    required: true
-
-  - type: dropdown
-    label: App Owner Approval
-    description: 'Has the application owner approved the release?'
-    options:
-      - 'App Owner Approved'
-      - 'App Owner Not Approved'
-    required: true
-
-  - type: markdown
-    value: |
-      ### Post-release Validation
-      _The steps for validating the release after deployment._
-      - Smoke tests
-      - Monitor system health
-      - Validate new features
-      - Confirm rollback procedures
+      - 'Build successfully created'
+      - 'QA sign-off completed'
+      - 'UAT sign-off completed'
