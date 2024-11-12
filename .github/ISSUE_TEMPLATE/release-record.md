@@ -1,38 +1,22 @@
----
-name: Bug report1
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+## Application Release Record Template
 
----
+Please fill in the details for the release below:
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### Application Name:
+- _Enter the application name here_
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### Release Version:
+- _Enter the release version number here_
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### Pre-release Steps:
+- [ ] Build successfully created
+- [ ] QA sign-off completed
+- [ ] UAT sign-off completed
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+### Approval:
+- **App Owner Approval**: _Enter app owner's name_
+- **SRE Sign-off**: _Enter SRE's name_
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+### Post-release Validation:
+- [ ] Monitor for 24 hours
+- [ ] Validate production environment stability
