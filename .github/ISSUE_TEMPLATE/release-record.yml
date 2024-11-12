@@ -1,0 +1,48 @@
+name: Release Record
+description: 'Track and manage the release process for various applications.'
+labels: ['release', 'approval']
+body:
+  - name: Application Name
+    description: 'The name of the application for which this release is being tracked.'
+    required: true
+    type: string
+  - name: Release Version
+    description: 'The version of the release being tracked (e.g., v1.2.0).'
+    required: true
+    type: string
+  - name: Release Description
+    description: 'A description of what this release contains.'
+    required: true
+    type: string
+  - name: Pre-release Sign-offs
+    description: 'List of sign-offs needed for the release process.'
+    required: true
+    type: string
+  - name: Certify-Release Build
+    description: 'Branch(es) to be released and certification steps (SonarQube, Nexus, Checkmarx).'
+    required: true
+    type: string
+  - name: QA Signoff
+    description: 'Has QA signed off on the release? Assign a reviewer.'
+    required: true
+    type: string
+  - name: UAT Signoff
+    description: 'Has UAT signed off on the release? Assign a reviewer.'
+    required: true
+    type: string
+  - name: SRE Signoff
+    description: 'Has SRE signed off on the release? Assign a reviewer.'
+    required: true
+    type: string
+  - name: App Owner Approval
+    description: 'Has the application owner approved the release? Assign a reviewer.'
+    required: true
+    type: string
+  - name: Post-release Validation
+    description: 'Post-release validation steps.'
+    required: false
+    type: checkboxes
+    options:
+      - 'Smoke tests'
+      - 'Monitor system health'
+      - 'Validate new features'
