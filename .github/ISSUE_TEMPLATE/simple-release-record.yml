@@ -1,5 +1,4 @@
 yaml
-name: Simple Release Record  
 description: Template for tracking release activities.
 labels:
   - release
