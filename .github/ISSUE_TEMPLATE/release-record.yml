@@ -3,67 +3,67 @@ description: 'Track and manage the release process for various applications.'
 labels: ['release', 'approval']
 body:
   - type: textarea
-    label: Application Name
+    label: 'Application Name'
     description: 'The name of the application for which this release is being tracked.'
     required: true
 
   - type: textarea
-    label: Release Version
+    label: 'Release Version'
     description: 'The version of the release being tracked (e.g., v1.2.0).'
     required: true
 
   - type: textarea
-    label: Release Description
+    label: 'Release Description'
     description: 'A description of what this release contains.'
     required: true
 
   - type: textarea
-    label: Pre-release Sign-offs
+    label: 'Pre-release Sign-offs'
     description: 'List of sign-offs needed for the release process.'
     required: true
 
   - type: textarea
-    label: Certify-Release Build
+    label: 'Certify-Release Build'
     description: 'Branch(es) to be released and certification steps (SonarQube, Nexus, Checkmarx).'
     required: true
 
   - type: dropdown
-    label: QA Signoff
+    label: 'QA Signoff'
     description: 'Has QA signed off on the release? Assign a reviewer.'
-    required: true
     options:
       - 'QA Approved'
       - 'QA Not Approved'
+    required: true
 
   - type: dropdown
-    label: UAT Signoff
+    label: 'UAT Signoff'
     description: 'Has UAT signed off on the release? Assign a reviewer.'
-    required: true
     options:
       - 'UAT Approved'
       - 'UAT Not Approved'
+    required: true
 
   - type: dropdown
-    label: SRE Signoff
+    label: 'SRE Signoff'
     description: 'Has SRE signed off on the release? Assign a reviewer.'
-    required: true
     options:
       - 'SRE Approved'
       - 'SRE Not Approved'
+    required: true
 
   - type: dropdown
-    label: App Owner Approval
+    label: 'App Owner Approval'
     description: 'Has the application owner approved the release? Assign a reviewer.'
-    required: true
     options:
       - 'App Owner Approved'
       - 'App Owner Not Approved'
+    required: true
 
   - type: checkboxes
-    label: Post-release Validation
+    label: 'Post-release Validation'
     description: 'Post-release validation steps.'
-    required: false
     options:
       - 'Smoke tests'
       - 'Monitor system health'
       - 'Validate new features'
+    required: false
