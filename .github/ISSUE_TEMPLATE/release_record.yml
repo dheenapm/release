@@ -46,6 +46,23 @@ body:
     validations:
       required: true
 
+  - type: checkboxes
+    id: signoff-persons
+    attributes:
+      label: Signoff Persons
+      description: Select the people who need to sign off on this release.
+      options:
+        - label: QA Team
+          value: qa-team
+        - label: UAT Team
+          value: uat-team
+        - label: SRE Team
+          value: sre-team
+        - label: App Owner
+          value: app-owner
+      validations:
+        required: true
+
   - type: dropdown
     id: qa-signoff
     attributes:
