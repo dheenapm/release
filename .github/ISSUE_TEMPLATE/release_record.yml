@@ -52,9 +52,9 @@ body:
       label: QA Signoff
       description: Has the QA team signed off on this release?
       options:
-        - Yes
-        - No
-      default: No
+        - "Yes"
+        - "No"
+      default: 0  # Yes is the first option, so the default index is 0
     validations:
       required: true
 
@@ -64,9 +64,9 @@ body:
       label: UAT Signoff
       description: Has the UAT team signed off on this release?
       options:
-        - Yes
-        - No
-      default: No
+        - "Yes"
+        - "No"
+      default: 0  # Yes is the first option, so the default index is 0
     validations:
       required: true
 
@@ -76,9 +76,9 @@ body:
       label: SRE Signoff
       description: Has the Site Reliability Engineering (SRE) team signed off on this release?
       options:
-        - Yes
-        - No
-      default: No
+        - "Yes"
+        - "No"
+      default: 0  # Yes is the first option, so the default index is 0
     validations:
       required: true
 
