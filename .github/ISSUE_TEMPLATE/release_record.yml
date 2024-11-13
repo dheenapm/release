@@ -1,0 +1,101 @@
+name: Release Record
+description: Track and approve the release process.
+title: "[Release Record]: "
+labels: ["release", "approved"]
+assignees:
+  - release-manager  # Replace with your team's GitHub username or a team name
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for initiating the release process! Please provide the necessary information and approvals for the release to proceed.
+
+  - type: input
+    id: release-version
+    attributes:
+      label: Release Version
+      description: Provide the version number for this release.
+      placeholder: ex. 1.2.3
+    validations:
+      required: true
+
+  - type: input
+    id: release-branch
+    attributes:
+      label: Release Branch
+      description: Provide the branch name from which this release is being created.
+      placeholder: ex. release/v1.2
+    validations:
+      required: true
+
+  - type: input
+    id: deployment-env
+    attributes:
+      label: Deployment Environment
+      description: Specify the environment where the release will be deployed (QA/Production).
+      placeholder: ex. QA, Production
+    validations:
+      required: true
+
+  - type: textarea
+    id: pre-release-steps
+    attributes:
+      label: Pre-Release Steps
+      description: Outline the steps that need to be completed before the release (e.g., version bump, changelog update, build, etc.)
+      placeholder: e.g., "Completed version bump and changelog."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: qa-signoff
+    attributes:
+      label: QA Signoff
+      description: Has the QA team signed off on this release?
+      options:
+        - Yes
+        - No
+      default: No
+    validations:
+      required: true
+
+  - type: dropdown
+    id: uat-signoff
+    attributes:
+      label: UAT Signoff
+      description: Has the UAT team signed off on this release?
+      options:
+        - Yes
+        - No
+      default: No
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sre-signoff
+    attributes:
+      label: SRE Signoff
+      description: Has the Site Reliability Engineering (SRE) team signed off on this release?
+      options:
+        - Yes
+        - No
+      default: No
+    validations:
+      required: true
+
+  - type: input
+    id: app-owner-approval
+    attributes:
+      label: App Owner Approval
+      description: Provide the name of the app owner who has approved this release.
+      placeholder: ex. John Doe
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: Code of Conduct
+      description: By submitting this release record, you agree to follow the [Code of Conduct](https://example.com).
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
