@@ -53,15 +53,9 @@ body:
       description: Select the people who need to sign off on this release.
       options:
         - label: QA Team
-          value: qa-team
         - label: UAT Team
-          value: uat-team
         - label: SRE Team
-          value: sre-team
         - label: App Owner
-          value: app-owner
-      validations:
-        required: true
 
   - type: dropdown
     id: qa-signoff
@@ -71,9 +65,7 @@ body:
       options:
         - "Yes"
         - "No"
-      default: 0  # Yes is the first option, so the default index is 0
-    validations:
-      required: true
+      default: "No"
 
   - type: dropdown
     id: uat-signoff
@@ -83,9 +75,7 @@ body:
       options:
         - "Yes"
         - "No"
-      default: 0  # Yes is the first option, so the default index is 0
-    validations:
-      required: true
+      default: "No"
 
   - type: dropdown
     id: sre-signoff
@@ -95,9 +85,7 @@ body:
       options:
         - "Yes"
         - "No"
-      default: 0  # Yes is the first option, so the default index is 0
-    validations:
-      required: true
+      default: "No"
 
   - type: input
     id: app-owner-approval
