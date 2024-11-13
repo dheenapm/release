@@ -5,7 +5,7 @@ name: Simple Release Pipeline
 on:
   pull_request:
     branches:
-      - test      # You can change to your target branch
+      - main      # You can change to your target branch
   workflow_dispatch:  # Allows you to trigger this manually
 
 jobs:
