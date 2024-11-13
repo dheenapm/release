@@ -1,6 +1,6 @@
 yaml
 
-name: Simple Release Pipeline
+name: "Simple Release Pipeline"
 
 on:
   pull_request:
