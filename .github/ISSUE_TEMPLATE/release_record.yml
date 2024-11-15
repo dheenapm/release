@@ -26,13 +26,13 @@ body:
       placeholder: "Enter target release date"
 
   ## Tasks & Activities with "Assigned to" as Textbox and "Status" as Checkboxes
-  
+
   ### 1) Create Rally milestone and ServiceNow Release:
-  - type: markdown
+  - type: input
     attributes:
-      value: |
-        **Assigned to (Rally milestone):** [Enter person assigned]  
-        **Status (Rally milestone):** [Complete/In Progress/NA]
+      label: "Assigned to (Rally milestone)"
+      description: "Enter the person assigned to the Rally milestone task."
+      placeholder: "Enter person assigned"
 
   - type: checkboxes
     attributes:
@@ -43,11 +43,11 @@ body:
         - label: "NA"
         
   ### 2) QA Sign Off:
-  - type: markdown
+  - type: input
     attributes:
-      value: |
-        **Assigned to (QA Sign Off):** [Enter person assigned]  
-        **Status (QA Sign Off):** [Complete/In Progress/NA]
+      label: "Assigned to (QA Sign Off)"
+      description: "Enter the person assigned to QA Sign Off."
+      placeholder: "Enter person assigned"
 
   - type: checkboxes
     attributes:
@@ -58,11 +58,11 @@ body:
         - label: "NA"
 
   ### 3) SRE Signoff:
-  - type: markdown
+  - type: input
     attributes:
-      value: |
-        **Assigned to (SRE Signoff):** [Enter person assigned]  
-        **Status (SRE Signoff):** [Complete/In Progress/NA]
+      label: "Assigned to (SRE Signoff)"
+      description: "Enter the person assigned to SRE Signoff."
+      placeholder: "Enter person assigned"
 
   - type: checkboxes
     attributes:
@@ -73,11 +73,11 @@ body:
         - label: "NA"
 
   ### 4) App Owner Approval:
-  - type: markdown
+  - type: input
     attributes:
-      value: |
-        **Assigned to (App Owner Approval):** [Enter person assigned]  
-        **Status (App Owner Approval):** [Complete/In Progress/NA]
+      label: "Assigned to (App Owner Approval)"
+      description: "Enter the person assigned to App Owner Approval."
+      placeholder: "Enter person assigned"
 
   - type: checkboxes
     attributes:
