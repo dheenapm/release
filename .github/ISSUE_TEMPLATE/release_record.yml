@@ -16,27 +16,33 @@ body:
         ## Activities & Tasks:
 
         ### 1) Create Rally milestone and ServiceNow Release:
-        - **Assigned to**: [Assign person]
+        - **Assigned to**: [Enter the name of the person responsible]
         - **Status**: [Complete/In Progress/NA]
 
         ### 2) QA Sign Off:
-        - **Assigned to**: [Assign person]
+        - **Assigned to**: [Enter the name of the person responsible]
         - **Status**: [Complete/In Progress/NA]
 
         ### 3) SRE Signoff:
-        - **Assigned to**: [Assign person]
+        - **Assigned to**: [Enter the name of the person responsible]
         - **Status**: [Complete/In Progress/NA]
 
         ### 4) App Owner Approval:
-        - **Assigned to**: [Assign person]
+        - **Assigned to**: [Enter the name of the person responsible]
         - **Status**: [Complete/In Progress/NA]
 
-  # Non-markdown field: Checkbox options (non-markdown field)
+  # Non-markdown field: Text input for "Assigned to"
+  - type: input
+    attributes:
+      label: "Assigned to"
+      description: "Enter the name of the person assigned to this task."
+      placeholder: "Enter the person's name"
+
+  # Non-markdown field: Dropdown-like options for "Status"
   - type: checkboxes
     attributes:
-      label: "Release Checklist"
+      label: "Status"
       options:
-        - label: "Task 1 Completed"
-        - label: "Task 2 Completed"
-        - label: "Task 3 Completed"
-        - label: "Task 4 Completed"
+        - label: "Complete"
+        - label: "In Progress"
+        - label: "NA"
