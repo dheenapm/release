@@ -1,106 +1,37 @@
-name: Release Record
-description: Track and approve the release process.
-title: "[Release Record]: "
-labels: ["release", "approved"]
-assignees:
-  - release-manager  # Replace with your team's GitHub username or a team name
+name: "Release Milestone"
+description: "Template for creating a release milestone with tasks and statuses"
+labels:
+  - "release-milestone"
+assignees: []
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for initiating the release process! Please provide the necessary information and approvals for the release to proceed.
+        ## Release Milestone
+        - **Release Milestone**: [Enter milestone name]
+        - **Application**: [Enter application name]
+        - **Target Date**: [Enter target release date]
 
-  - type: input
-    id: release-version
-    attributes:
-      label: Release Version
-      description: Provide the version number for this release.
-      placeholder: ex. 1.2.3
-    validations:
-      required: true
+        ## Activities & Tasks:
 
-  - type: input
-    id: release-branch
-    attributes:
-      label: Release Branch
-      description: Provide the branch name from which this release is being created.
-      placeholder: ex. release/v1.2
-    validations:
-      required: true
+        ### 1) Create Rally milestone and ServiceNow Release:
+        - **Assigned to**: [Assign person]
+        - **Status**: [Complete/In Progress/NA]
 
-  - type: input
-    id: deployment-env
-    attributes:
-      label: Deployment Environment
-      description: Specify the environment where the release will be deployed (QA/Production).
-      placeholder: ex. QA, Production
-    validations:
-      required: true
+        ### 2) QA Sign Off:
+        - **Assigned to**: [Assign person]
+        - **Status**: [Complete/In Progress/NA]
 
-  - type: textarea
-    id: pre-release-steps
-    attributes:
-      label: Pre-Release Steps
-      description: Outline the steps that need to be completed before the release (e.g., version bump, changelog update, build, etc.)
-      placeholder: e.g., "Completed version bump and changelog."
-    validations:
-      required: true
+        ### 3) SRE Signoff:
+        - **Assigned to**: [Assign person]
+        - **Status**: [Complete/In Progress/NA]
 
-  - type: checkboxes
-    id: signoff-persons
-    attributes:
-      label: Signoff Persons
-      description: Select the people who need to sign off on this release.
-      options:
-        - label: QA Team
-        - label: UAT Team
-        - label: SRE Team
-        - label: App Owner
+        ### 4) App Owner Approval:
+        - **Assigned to**: [Assign person]
+        - **Status**: [Complete/In Progress/NA]
 
-  - type: dropdown
-    id: qa-signoff
-    attributes:
-      label: QA Signoff
-      description: Has the QA team signed off on this release?
-      options:
-        - "Yes"
-        - "No"
-      default: 1  # Index of "No"
-    
-  - type: dropdown
-    id: uat-signoff
-    attributes:
-      label: UAT Signoff
-      description: Has the UAT team signed off on this release?
-      options:
-        - "Yes"
-        - "No"
-      default: 1  # Index of "No"
-
-  - type: dropdown
-    id: sre-signoff
-    attributes:
-      label: SRE Signoff
-      description: Has the Site Reliability Engineering (SRE) team signed off on this release?
-      options:
-        - "Yes"
-        - "No"
-      default: 1  # Index of "No"
-
-  - type: input
-    id: app-owner-approval
-    attributes:
-      label: App Owner Approval
-      description: Provide the name of the app owner who has approved this release.
-      placeholder: ex. John Doe
-    validations:
-      required: true
-
-  - type: checkboxes
-    id: code-of-conduct
-    attributes:
-      label: Code of Conduct
-      description: By submitting this release record, you agree to follow the [Code of Conduct](https://example.com).
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+        ### Checklist:
+        - [ ] Task 1 Completed
+        - [ ] Task 2 Completed
+        - [ ] Task 3 Completed
+        - [ ] Task 4 Completed
