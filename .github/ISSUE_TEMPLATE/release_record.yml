@@ -11,17 +11,17 @@ body:
       description: "Enter the release milestone name."
       placeholder: "Enter milestone name"
       
-  # Text input for "Release Status"
+  # Release Status field (label removed or minimized)
   - type: checkboxes
     attributes:
-      label: "Release Status"
+      label: ""  # No label text, making it minimal or blank
       description: "Select the current release status."
       options:
         - label: "Draft"
         - label: "Open"
         - label: "Complete"
         - label: "Cancelled"
-        
+
   # Text input for "Application"
   - type: input
     attributes:
