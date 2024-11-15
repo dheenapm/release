@@ -14,14 +14,20 @@ jobs:
       - name: Get issue details
         id: issue
         run: |
+          # Fetch the issue body using the GitHub API
           issue_body=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} | jq -r '.body')
-          echo "issue_body=$issue_body" >> $GITHUB_ENV
+            "https://api.github.com/repos/dheenapm/release/issues/${{ github.event.issue.number }}" | jq -r '.body')
+          
+          # Remove any problematic newlines or special characters
+          sanitized_body=$(echo "$issue_body" | tr -d '\n' | tr -d '\r')
+
+          # Export the sanitized body to the environment variable
+          echo "issue_body=$sanitized_body" >> $GITHUB_ENV
 
       - name: Check task completion
         id: task-check
         run: |
-          # Extract task statuses from the issue body (assuming a known format for task completion)
+          # Extract task statuses from the sanitized issue body
           task_statuses=$(echo "${{ env.issue_body }}" | grep -oP '(?<=Status \().*?(?=\))')
 
           # Check if all tasks are marked as Complete
@@ -30,7 +36,7 @@ jobs:
             exit 1
           else
             echo "All tasks are complete. Marking release as complete."
-            # You can trigger other actions here like adding a label or sending notifications
+            # Add additional steps if needed (like sending notifications or deploying)
           fi
 
       - name: Add 'Release Complete' label
@@ -38,4 +44,4 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -d '{"labels": ["Release Complete"]}' \
-            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels
+            "https://api.github.com/repos/dheenapm/release/issues/${{ github.event.issue.number }}/labels"
