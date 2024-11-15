@@ -4,6 +4,7 @@ labels:
   - "release-milestone"
 assignees: []
 body:
+  # Markdown body section for task description
   - type: markdown
     attributes:
       value: |
@@ -30,12 +31,16 @@ body:
         - **Assigned to**: [Assign person]
         - **Status**: [Complete/In Progress/NA]
 
-  # Non-markdown field: Add a checkbox or text field to make the template valid
+  # Non-markdown field: Checkbox options (non-markdown field)
   - type: checkboxes
     attributes:
       label: "Release Checklist"
       options:
-        - "[ ] Task 1 Completed"
-        - "[ ] Task 2 Completed"
-        - "[ ] Task 3 Completed"
-        - "[ ] Task 4 Completed"
+        - label: "[ ] Task 1 Completed"
+          value: "task_1"
+        - label: "[ ] Task 2 Completed"
+          value: "task_2"
+        - label: "[ ] Task 3 Completed"
+          value: "task_3"
+        - label: "[ ] Task 4 Completed"
+          value: "task_4"
