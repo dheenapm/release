@@ -11,10 +11,10 @@ body:
       description: "Enter the release milestone name."
       placeholder: "Enter milestone name"
       
-  # Release Status field with a minimal label ("Release Status")
+  # Release Status field with a short label
   - type: checkboxes
     attributes:
-      label: "Release Status"  # Short label
+      label: "Release Status"  # Valid label, minimal but present
       description: "Select the current release status."
       options:
         - label: "Draft"
