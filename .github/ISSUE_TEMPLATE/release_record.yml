@@ -4,43 +4,85 @@ labels:
   - "release-milestone"
 assignees: []
 body:
+  # Text input for "Release Milestone"
   - type: input
     attributes:
       label: "Release Milestone"
       description: "Enter the release milestone name."
       placeholder: "Enter milestone name"
       
+  # Text input for "Application"
   - type: input
     attributes:
       label: "Application"
       description: "Enter the name of the application."
       placeholder: "Enter application name"
       
+  # Text input for "Target Date"
   - type: input
     attributes:
       label: "Target Date"
       description: "Enter the target release date."
       placeholder: "Enter target release date"
-      
-  - type: textarea
+
+  ## Tasks & Activities with "Assigned to" as Textbox and "Status" as Checkboxes
+  
+  ### 1) Create Rally milestone and ServiceNow Release:
+  - type: input
     attributes:
-      label: "Release Notes"
-      description: "Provide any additional details or release notes."
-      placeholder: "Enter release notes here..."
-      
-  - type: dropdown
+      label: "Assigned to (Rally milestone)"
+      description: "Enter the person assigned to the Rally milestone task."
+      placeholder: "Enter person assigned"
+  
+  - type: checkboxes
     attributes:
-      label: "Status"
+      label: "Status (Rally milestone)"
       options:
         - label: "Complete"
         - label: "In Progress"
         - label: "NA"
-      
+        
+  ### 2) QA Sign Off:
+  - type: input
+    attributes:
+      label: "Assigned to (QA Sign Off)"
+      description: "Enter the person assigned to QA Sign Off."
+      placeholder: "Enter person assigned"
+  
   - type: checkboxes
     attributes:
-      label: "Release Checklist"
+      label: "Status (QA Sign Off)"
       options:
-        - label: "Task 1 Completed"
-        - label: "Task 2 Completed"
-        - label: "Task 3 Completed"
-        - label: "Task 4 Completed"
+        - label: "Complete"
+        - label: "In Progress"
+        - label: "NA"
+
+  ### 3) SRE Signoff:
+  - type: input
+    attributes:
+      label: "Assigned to (SRE Signoff)"
+      description: "Enter the person assigned to SRE Signoff."
+      placeholder: "Enter person assigned"
+  
+  - type: checkboxes
+    attributes:
+      label: "Status (SRE Signoff)"
+      options:
+        - label: "Complete"
+        - label: "In Progress"
+        - label: "NA"
+
+  ### 4) App Owner Approval:
+  - type: input
+    attributes:
+      label: "Assigned to (App Owner Approval)"
+      description: "Enter the person assigned to App Owner Approval."
+      placeholder: "Enter person assigned"
+  
+  - type: checkboxes
+    attributes:
+      label: "Status (App Owner Approval)"
+      options:
+        - label: "Complete"
+        - label: "In Progress"
+        - label: "NA"
