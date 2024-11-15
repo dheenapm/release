@@ -1,0 +1,67 @@
+name: Validate GitHub Usernames
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  validate-usernames:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get issue data
+        id: issue
+        run: |
+          issue_body=$(curl -s \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} | jq -r '.body')
+          echo "issue_body=$issue_body" >> $GITHUB_ENV
+
+      - name: Validate usernames
+        id: validate
+        run: |
+          # Extract usernames from the issue body (Assumes you're using a specific format for usernames in the body)
+          usernames=$(echo "${{ env.issue_body }}" | grep -oP '(?<=Assigned to\s\().*?(?=\))')
+          
+          # Initialize an empty array to collect invalid usernames
+          invalid_usernames=()
+
+          # Loop through each username and check if it's valid
+          for username in $usernames; do
+            # Use GitHub API to check if the user exists
+            response=$(curl -s -o /dev/null -w "%{http_code}" \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              https://api.github.com/users/$username)
+
+            # If the user does not exist (404 error), add them to the invalid list
+            if [ "$response" != "200" ]; then
+              invalid_usernames+=($username)
+            fi
+          done
+
+          # Output invalid usernames
+          if [ ${#invalid_usernames[@]} -gt 0 ]; then
+            echo "Invalid usernames: ${invalid_usernames[@]}"
+            echo "::set-output name=invalid-usernames::${invalid_usernames[@]}"
+          else
+            echo "All usernames are valid!"
+          fi
+
+      - name: Comment on the issue if there are invalid usernames
+        if: steps.validate.outputs.invalid-usernames != ''
+        run: |
+          invalid_usernames="${{ steps.validate.outputs.invalid-usernames }}"
+          # Comment on the issue with the invalid usernames
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"body": "The following GitHub usernames are invalid: '"$invalid_usernames"'."}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments
+          
+      - name: Set issue status to failed if invalid usernames are found
+        if: steps.validate.outputs.invalid-usernames != ''
+        run: |
+          # Add a label to indicate that the issue has invalid usernames
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"labels": ["invalid-usernames"]}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels
