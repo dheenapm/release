@@ -1,48 +1,46 @@
-name: "Release Milestones"
+name: "Release Milestone"
 description: "Template for creating a release milestone with tasks and statuses"
 labels:
   - "release-milestone"
 assignees: []
 body:
-  # Markdown body section for task description
-  - type: markdown
-    attributes:
-      value: |
-        ## Release Milestone
-        - **Release Milestone**: [Enter milestone name]
-        - **Application**: [Enter application name]
-        - **Target Date**: [Enter target release date]
-
-        ## Activities & Tasks:
-
-        ### 1) Create Rally milestone and ServiceNow Release:
-        - **Assigned to**: [Enter the name of the person responsible]
-        - **Status**: [Complete/In Progress/NA]
-
-        ### 2) QA Sign Off:
-        - **Assigned to**: [Enter the name of the person responsible]
-        - **Status**: [Complete/In Progress/NA]
-
-        ### 3) SRE Signoff:
-        - **Assigned to**: [Enter the name of the person responsible]
-        - **Status**: [Complete/In Progress/NA]
-
-        ### 4) App Owner Approval:
-        - **Assigned to**: [Enter the name of the person responsible]
-        - **Status**: [Complete/In Progress/NA]
-
-  # Non-markdown field: Text input for "Assigned to"
   - type: input
     attributes:
-      label: "Assigned to"
-      description: "Enter the name of the person assigned to this task."
-      placeholder: "Enter the person's name"
-
-  # Non-markdown field: Dropdown-like options for "Status"
-  - type: checkboxes
+      label: "Release Milestone"
+      description: "Enter the release milestone name."
+      placeholder: "Enter milestone name"
+      
+  - type: input
+    attributes:
+      label: "Application"
+      description: "Enter the name of the application."
+      placeholder: "Enter application name"
+      
+  - type: input
+    attributes:
+      label: "Target Date"
+      description: "Enter the target release date."
+      placeholder: "Enter target release date"
+      
+  - type: textarea
+    attributes:
+      label: "Release Notes"
+      description: "Provide any additional details or release notes."
+      placeholder: "Enter release notes here..."
+      
+  - type: dropdown
     attributes:
       label: "Status"
       options:
         - label: "Complete"
         - label: "In Progress"
         - label: "NA"
+      
+  - type: checkboxes
+    attributes:
+      label: "Release Checklist"
+      options:
+        - label: "Task 1 Completed"
+        - label: "Task 2 Completed"
+        - label: "Task 3 Completed"
+        - label: "Task 4 Completed"
