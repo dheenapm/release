@@ -28,12 +28,12 @@ body:
   ## Tasks & Activities with "Assigned to" as Textbox and "Status" as Checkboxes
   
   ### 1) Create Rally milestone and ServiceNow Release:
-  - type: input
+  - type: markdown
     attributes:
-      label: "Assigned to (Rally milestone)"
-      description: "Enter the person assigned to the Rally milestone task."
-      placeholder: "Enter person assigned"
-  
+      value: |
+        **Assigned to (Rally milestone):** [Enter person assigned]  
+        **Status (Rally milestone):** [Complete/In Progress/NA]
+
   - type: checkboxes
     attributes:
       label: "Status (Rally milestone)"
@@ -43,12 +43,12 @@ body:
         - label: "NA"
         
   ### 2) QA Sign Off:
-  - type: input
+  - type: markdown
     attributes:
-      label: "Assigned to (QA Sign Off)"
-      description: "Enter the person assigned to QA Sign Off."
-      placeholder: "Enter person assigned"
-  
+      value: |
+        **Assigned to (QA Sign Off):** [Enter person assigned]  
+        **Status (QA Sign Off):** [Complete/In Progress/NA]
+
   - type: checkboxes
     attributes:
       label: "Status (QA Sign Off)"
@@ -58,12 +58,12 @@ body:
         - label: "NA"
 
   ### 3) SRE Signoff:
-  - type: input
+  - type: markdown
     attributes:
-      label: "Assigned to (SRE Signoff)"
-      description: "Enter the person assigned to SRE Signoff."
-      placeholder: "Enter person assigned"
-  
+      value: |
+        **Assigned to (SRE Signoff):** [Enter person assigned]  
+        **Status (SRE Signoff):** [Complete/In Progress/NA]
+
   - type: checkboxes
     attributes:
       label: "Status (SRE Signoff)"
@@ -73,12 +73,12 @@ body:
         - label: "NA"
 
   ### 4) App Owner Approval:
-  - type: input
+  - type: markdown
     attributes:
-      label: "Assigned to (App Owner Approval)"
-      description: "Enter the person assigned to App Owner Approval."
-      placeholder: "Enter person assigned"
-  
+      value: |
+        **Assigned to (App Owner Approval):** [Enter person assigned]  
+        **Status (App Owner Approval):** [Complete/In Progress/NA]
+
   - type: checkboxes
     attributes:
       label: "Status (App Owner Approval)"
