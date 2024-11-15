@@ -14,7 +14,7 @@ body:
   # Release Status field with a minimal label
   - type: checkboxes
     attributes:
-      label: " "  # Minimal label with a space
+      label: "."  # Minimal label with a period, this will be less visible
       description: "Select the current release status."
       options:
         - label: "Draft"
