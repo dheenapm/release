@@ -1,0 +1,41 @@
+name: "Release Status Automation"
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  release-status-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get issue details
+        id: issue
+        run: |
+          issue_body=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} | jq -r '.body')
+          echo "issue_body=$issue_body" >> $GITHUB_ENV
+
+      - name: Check task completion
+        id: task-check
+        run: |
+          # Extract task statuses from the issue body (assuming a known format for task completion)
+          task_statuses=$(echo "${{ env.issue_body }}" | grep -oP '(?<=Status \().*?(?=\))')
+
+          # Check if all tasks are marked as Complete
+          if [[ "$task_statuses" =~ "In Progress" ]]; then
+            echo "Some tasks are still in progress. Release cannot be marked as complete."
+            exit 1
+          else
+            echo "All tasks are complete. Marking release as complete."
+            # You can trigger other actions here like adding a label or sending notifications
+          fi
+
+      - name: Add 'Release Complete' label
+        if: success()
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d '{"labels": ["Release Complete"]}' \
+            https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels
