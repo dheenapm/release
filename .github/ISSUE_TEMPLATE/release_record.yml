@@ -30,8 +30,12 @@ body:
         - **Assigned to**: [Assign person]
         - **Status**: [Complete/In Progress/NA]
 
-        ### Checklist:
-        - [ ] Task 1 Completed
-        - [ ] Task 2 Completed
-        - [ ] Task 3 Completed
-        - [ ] Task 4 Completed
+  # Non-markdown field: Add a checkbox or text field to make the template valid
+  - type: checkboxes
+    attributes:
+      label: "Release Checklist"
+      options:
+        - "[ ] Task 1 Completed"
+        - "[ ] Task 2 Completed"
+        - "[ ] Task 3 Completed"
+        - "[ ] Task 4 Completed"
