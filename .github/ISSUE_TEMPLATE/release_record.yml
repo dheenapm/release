@@ -1,4 +1,4 @@
-name: "Release Milestone"
+name: "Release Milestones"
 description: "Template for creating a release milestone with tasks and statuses"
 labels:
   - "release-milestone"
