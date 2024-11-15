@@ -11,6 +11,17 @@ body:
       description: "Enter the release milestone name."
       placeholder: "Enter milestone name"
       
+  # Text input for "Release Status"
+  - type: checkboxes
+    attributes:
+      label: "Release Status"
+      description: "Select the current release status."
+      options:
+        - label: "Draft"
+        - label: "Open"
+        - label: "Complete"
+        - label: "Cancelled"
+        
   # Text input for "Application"
   - type: input
     attributes:
@@ -26,7 +37,7 @@ body:
       placeholder: "Enter target release date"
 
   ## Tasks & Activities with "Assigned to" as Textbox and "Status" as Checkboxes
-
+  
   ### 1) Create Rally milestone and ServiceNow Release:
   - type: input
     attributes:
