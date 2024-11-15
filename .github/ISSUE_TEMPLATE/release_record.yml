@@ -36,11 +36,7 @@ body:
     attributes:
       label: "Release Checklist"
       options:
-        - label: "[ ] Task 1 Completed"
-          value: "task_1"
-        - label: "[ ] Task 2 Completed"
-          value: "task_2"
-        - label: "[ ] Task 3 Completed"
-          value: "task_3"
-        - label: "[ ] Task 4 Completed"
-          value: "task_4"
+        - label: "Task 1 Completed"
+        - label: "Task 2 Completed"
+        - label: "Task 3 Completed"
+        - label: "Task 4 Completed"
